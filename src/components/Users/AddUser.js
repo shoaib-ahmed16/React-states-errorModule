@@ -3,7 +3,6 @@ import Card from '../UI/Card';
 import classes  from './AddUser.module.css'
 import Button  from '../UI/Button';
 import ErrorModel from '../UI/ErrorModel'
-
 const AddUser =(props)=>{
 const [enteredUserName,setEnterUserName]=useState("");
 const [enteredUserAge,setEnterUserAge]=useState(0);
@@ -43,7 +42,7 @@ const [error,setError] =useState()
   }
 
   return (
-    <div>
+    <React.Fragment>
     {error && <ErrorModel onConfirm={errorHandler} errorTitle={error.errorTitle} errorMessage={error.errorMessage}/>}
     <Card className={classes.input}>
     <form onSubmit={addUserHandler}>
@@ -54,7 +53,7 @@ const [error,setError] =useState()
         <Button type='submit'>Add User</Button>
     </form>
     </Card>
-    </div>
+    </React.Fragment>
  )
 }
 
